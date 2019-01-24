@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+[ -e "$HOME/.gemrc" ] && rm "$HOME/.gemrc"
+ln -s "$PWD/.gemrc" "$HOME/.gemrc"
+
+[ -e "$HOME/.hushlogin" ] && rm "$HOME/.hushlogin"
+ln -s "$PWD/.hushlogin" "$HOME/.hushlogin"
+
+[ -s "$HOME/.zshrc" ] && rm "$HOME/.zshrc"
+ln -s "$PWD/.zshrc" "$HOME/.zshrc"
