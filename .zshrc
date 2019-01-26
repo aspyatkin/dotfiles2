@@ -69,10 +69,6 @@ function ssh_prompt () {
     fi
 }
 
-function weekend_prompt () {
-    echo '%B%F{green}%(0w.☕.)%(6w.☕.)%f%b'
-}
-
 function user_host_prompt () {
     if [[ -n $SSH_CONNECTION ]]; then
         local fqdn
@@ -93,7 +89,7 @@ function pwd_prompt () {
     echo '%B%F{cyan}%~%f%b '
 }
 
-PROMPT=$'$(ssh_prompt)$(weekend_prompt)$(user_host_prompt)$(pwd_prompt)${vcs_info_msg_0_}%E\n%B%(?.%F{green}.%F{red})›%f%b%E '
+PROMPT=$'$(ssh_prompt)$(user_host_prompt)$(pwd_prompt)${vcs_info_msg_0_}%E\n%B%(?.%F{green}.%F{red})›%f%b%E '
 
 # user-friendly command output
 export CLICOLOR=1
