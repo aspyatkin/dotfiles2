@@ -34,7 +34,7 @@ setopt prompt_subst
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git*' formats " %F{yellow}%b%f %F{green}%c%f%F{yellow}%u%f%m"
+zstyle ':vcs_info:git*' formats "%F{yellow}%b%f %F{green}%c%f%F{yellow}%u%f%m"
 
 zstyle ':vcs_info:*' unstagedstr '!'
 zstyle ':vcs_info:*' stagedstr '+'
@@ -65,11 +65,29 @@ precmd () {
 
 function ssh_prompt () {
     if [[ -n $SSH_CONNECTION ]]; then
-        echo '%F{magenta}𝐬𝐬𝐡%f '
+        echo '%F{magenta}⟮𝐬𝐬𝐡⟯%f '
     fi
 }
 
-PROMPT=$'$(ssh_prompt)%F{white}%n@%M%f %F{blue}%~%f${vcs_info_msg_0_}%E\n%B%(?.%F{green}.%F{red})›%f%b%E '
+function user_host_prompt () {
+    if [[ -n $SSH_CONNECTION ]]; then
+        if [[ $UID -eq 0 ]]; then
+            echo '%B%F{red}%n%f%F{white}@$(hostname -f)%f%B '
+        else
+            echo '%B%F{white}%n@$(hostname -f)%f%B '
+        fi
+    else
+        if [[ $UID -eq 0 ]]; then
+            echo '%B%F{red}%n%f '
+        fi
+    fi
+}
+
+function pwd_prompt () {
+    echo '%B%F{blue}%~%f%b '
+}
+
+PROMPT=$'$(ssh_prompt)$(user_host_prompt)$(pwd_prompt)${vcs_info_msg_0_}%E\n%B%(?.%F{green}.%F{red})›%f%b%E '
 
 # user-friendly command output
 export CLICOLOR=1
