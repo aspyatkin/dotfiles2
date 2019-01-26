@@ -63,13 +63,13 @@ precmd () {
     vcs_info
 }
 
-ssh_prompt () {
+function ssh_prompt () {
     if [[ -n $SSH_CONNECTION ]]; then
-        echo '%F{blue}ⓢⓢⓗ%f'
+        echo '%F{magenta}𝐬𝐬𝐡%f '
     fi
 }
 
-PROMPT=$'${ssh_prompt}%F{white}%n@%M%f %F{blue}%~%f${vcs_info_msg_0_}%E\n%B%(?.%F{green}.%F{red})›%f%b%E '
+PROMPT=$'$(ssh_prompt)%F{white}%n@%M%f %F{blue}%~%f${vcs_info_msg_0_}%E\n%B%(?.%F{green}.%F{red})›%f%b%E '
 
 # user-friendly command output
 export CLICOLOR=1
