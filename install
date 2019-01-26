@@ -11,4 +11,3 @@ ln -s "$PWD/.zshrc" "$HOME/.zshrc"
 
 [ -e "$HOME/.gitconfig" ] || [ -h "$HOME/.gitconfig" ] && rm "$HOME/.gitconfig"
 ln -s "$PWD/.gitconfig" "$HOME/.gitconfig"
-
