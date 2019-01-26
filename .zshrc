@@ -90,7 +90,7 @@ function user_host_prompt () {
 }
 
 function pwd_prompt () {
-    echo '%B%F{blue}%~%f%b '
+    echo '%B%F{cyan}%~%f%b '
 }
 
 PROMPT=$'$(ssh_prompt)$(weekend_prompt)$(user_host_prompt)$(pwd_prompt)${vcs_info_msg_0_}%E\n%B%(?.%F{green}.%F{red})›%f%b%E '
