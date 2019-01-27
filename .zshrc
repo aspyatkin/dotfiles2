@@ -95,6 +95,5 @@ PROMPT=$'$(ssh_prompt)$(user_host_prompt)$(pwd_prompt)${vcs_info_msg_0_}%E\n%B%(
 export CLICOLOR=1
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 
-# rbenv
-#export PATH="$HOME/.rbenv/bin:$HOME/.local/bin:$PATH"
-#eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$HOME/.local/bin:$PATH"
+eval "$(rbenv init -)"
