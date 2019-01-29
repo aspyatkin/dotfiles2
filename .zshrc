@@ -116,3 +116,7 @@ export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
 if [ -x "$HOME/.acme.sh/acme.sh" ]; then
     alias acme.sh='$HOME/.acme.sh/acme.sh'
 fi
+
+if [ -x "$(command -v keychain)" ]; then
+    eval `keychain --eval --agents ssh id_rsa id_ed25519`
+fi
