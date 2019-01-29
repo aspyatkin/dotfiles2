@@ -95,5 +95,16 @@ PROMPT=$'$(ssh_prompt)$(user_host_prompt)$(pwd_prompt)${vcs_info_msg_0_}%E\n%B%(
 export CLICOLOR=1
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
 
-export PATH="$HOME/.rbenv/bin:$HOME/.local/bin:$PATH"
-eval "$(rbenv init -)"
+NEW_PATH="$PATH"
+
+if [ -d "$HOME/.rbenv/bin" ]; then
+    NEW_PATH="$HOME/.rbenv/bin:$NEW_PATH"
+fi
+
+export PATH="$NEW_PATH"
+
+if [ -x "$(command -v rbenv)" ]; then
+    eval "$(rbenv init -)"
+fi
+
+export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
