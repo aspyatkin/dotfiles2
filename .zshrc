@@ -101,6 +101,10 @@ if [ -d "$HOME/.rbenv/bin" ]; then
     NEW_PATH="$HOME/.rbenv/bin:$NEW_PATH"
 fi
 
+if [ -d "$HOME/.local/bin" ]; then
+    NEW_PATH="$HOME/.local/bin:$NEW_PATH"
+fi
+
 export PATH="$NEW_PATH"
 
 if [ -x "$(command -v rbenv)" ]; then
@@ -108,3 +112,7 @@ if [ -x "$(command -v rbenv)" ]; then
 fi
 
 export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+
+if [ -x "$HOME/.acme.sh/acme.sh" ]; then
+    alias acme.sh='$HOME/.acme.sh/acme.sh'
+fi
