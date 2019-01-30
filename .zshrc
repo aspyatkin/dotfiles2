@@ -98,6 +98,10 @@ alias l='ls -a -l -F -h'
 
 NEW_PATH="$PATH"
 
+if [ -d "/usr/local/sbin" ]; then
+    NEW_PATH="/usr/local/sbin:$NEW_PATH"
+fi
+
 if [ -d "$HOME/.rbenv/bin" ]; then
     NEW_PATH="$HOME/.rbenv/bin:$NEW_PATH"
 fi
