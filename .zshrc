@@ -94,7 +94,7 @@ PROMPT=$'$(ssh_prompt)$(user_host_prompt)$(pwd_prompt)${vcs_info_msg_0_}%E\n%B%(
 # user-friendly command output
 export CLICOLOR=1
 ls --color=auto &> /dev/null && alias ls='ls --color=auto'
-alias l='ls -a -l -F -h --color=auto'
+alias l='ls -a -l -F -h'
 
 NEW_PATH="$PATH"
 
