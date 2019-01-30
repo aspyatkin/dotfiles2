@@ -1,0 +1,27 @@
+Xft.rgba: rgb
+XTerm.termName: xterm-256color
+XTerm.vt100.faceName: PragmataPro Mono
+XTerm.vt100.faceSize: 13
+XTerm.vt100.metaSendsEscape: true
+XTerm.vt100.foreground:   #eff0eb
+XTerm.vt100.background:   #20232c
+XTerm.vt100.cursorColor:  #eff0eb
+XTerm.vt100.color0:       #000000
+XTerm.vt100.color8:       #686868
+XTerm.vt100.color1:       #ff5c57
+XTerm.vt100.color9:       #ff5c57
+XTerm.vt100.color2:       #5af78e
+XTerm.vt100.color10:      #5af78e
+XTerm.vt100.color3:       #f3f99d
+XTerm.vt100.color11:      #f3f99d
+XTerm.vt100.color4:       #57c7ff
+XTerm.vt100.color12:      #57c7ff
+XTerm.vt100.color5:       #ff6ac1
+XTerm.vt100.color13:      #ff6ac1
+XTerm.vt100.color6:       #9aedfe
+XTerm.vt100.color14:      #9aedfe
+XTerm.vt100.color7:       #f1f1f0
+XTerm.vt100.color15:      #f1f1f0
+
+XTerm*saveLines: 99999
+XTerm*geometry: 100x30

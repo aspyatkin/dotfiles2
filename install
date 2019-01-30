@@ -11,3 +11,9 @@ ln -s "$PWD/.zshrc" "$HOME/.zshrc"
 
 [ -e "$HOME/.gitconfig" ] || [ -h "$HOME/.gitconfig" ] && rm "$HOME/.gitconfig"
 ln -s "$PWD/.gitconfig" "$HOME/.gitconfig"
+
+[ -e "$HOME/.Xresources" ] || [ -h "$HOME/.Xresources" ] && rm "$HOME/.Xresources"
+ln -s "$PWD/.Xresources" "$HOME/.Xresources"
+
+[ -e "$HOME/.Xdefaults" ] || [ -h "$HOME/.Xdefaults" ] && rm "$HOME/.Xdefaults"
+ln -s "$PWD/.Xresources" "$HOME/.Xdefaults"
