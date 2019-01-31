@@ -127,3 +127,6 @@ if [ -x "$(command -v keychain)" ]; then
 fi
 
 export EDITOR=vim
+
+alias ssh_with_pwd='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no -F /dev/null'
+alias ssh_with_key='ssh -o IdentitiesOnly=yes -F /dev/null'
