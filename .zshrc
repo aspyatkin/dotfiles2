@@ -116,7 +116,9 @@ if [ -x "$(command -v rbenv)" ]; then
     eval "$(rbenv init -)"
 fi
 
-export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+if [ -f "/proc/sys/kernel/osrelease" ] && grep -q Microsoft /proc/sys/kernel/osrelease; then
+    export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+fi
 
 if [ -x "$HOME/.acme.sh/acme.sh" ]; then
     alias acme.sh='$HOME/.acme.sh/acme.sh'
