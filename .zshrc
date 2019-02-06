@@ -36,14 +36,14 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git*' formats "%F{yellow}%b%f %m%u%c"
 
-zstyle ':vcs_info:*' unstagedstr '%B%F{yellow}!%f%b'
-zstyle ':vcs_info:*' stagedstr '%B%F{green}+%f%b'
+zstyle ':vcs_info:*' unstagedstr '%F{yellow}!%f'
+zstyle ':vcs_info:*' stagedstr '%F{green}+%f'
 
 zstyle ':vcs_info:git*+set-message:*' hooks git-st git-untracked
 +vi-git-untracked(){
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
         git status --porcelain | grep '??' &> /dev/null ; then
-        hook_com[misc]+='%B%F{red}?%f%b'
+        hook_com[misc]+='%F{red}?%f'
     fi
 }
 
@@ -52,10 +52,10 @@ function +vi-git-st() {
     local -a gitstatus
 
     ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l | tr -d ' ')
-    (( $ahead )) && ahead_fmt=$(echo "${ahead}" | sed 's/1/¹/; s/2/²/; s/3/³/; s/4/⁴/; s/5/⁵/; s/6/⁶/; s/7/⁷/; s/8/⁸/; s/9/⁹/; s/0/⁰/;') && gitstatus+=( "%F{blue}↑${ahead_fmt}%f " )
+    (( $ahead )) && ahead_fmt=$(echo "${ahead}" | sed 's/1/¹/g; s/2/²/g; s/3/³/g; s/4/⁴/g; s/5/⁵/g; s/6/⁶/g; s/7/⁷/g; s/8/⁸/g; s/9/⁹/g; s/0/⁰/g;') && gitstatus+=( "%F{blue}↑${ahead_fmt}%f " )
 
     behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l | tr -d ' ')
-    (( $behind )) && behind_fmt=$(echo "${behind}" | sed 's/1/₁/; s/2/₂/; s/3/₃/; s/4/₄/; s/5/₅/; s/6/₆/; s/7/₇/; s/8/₈/; s/9/₉/; s/0/₀/;') && gitstatus+=( "%F{blue}↓${behind_fmt}%f " )
+    (( $behind )) && behind_fmt=$(echo "${behind}" | sed 's/1/₁/g; s/2/₂/g; s/3/₃/g; s/4/₄/g; s/5/₅/g; s/6/₆/g; s/7/₇/g; s/8/₈/g; s/9/₉/g; s/0/₀/g;') && gitstatus+=( "%F{blue}↓${behind_fmt}%f " )
 
     hook_com[misc]+="${gitstatus}"
 }
@@ -74,9 +74,9 @@ function user_host_prompt () {
         local fqdn
 	fqdn=$(hostname -f)
         if [[ $UID -eq 0 ]]; then
-            echo "%B%F{yellow}⚠ %n@${fqdn}%f%B "
+            echo "%B%F{yellow}⚠ %n@${fqdn}%f%b "
         else
-            echo "%B%F{white}%n@${fqdn}%f%B "
+            echo "%B%F{white}%n@${fqdn}%f%b "
         fi
     else
         if [[ $UID -eq 0 ]]; then
@@ -118,6 +118,7 @@ fi
 
 if [ -f "/proc/sys/kernel/osrelease" ] && grep -q Microsoft /proc/sys/kernel/osrelease; then
     export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+    unsetopt bg_nice
 fi
 
 if [ -x "$HOME/.acme.sh/acme.sh" ]; then
