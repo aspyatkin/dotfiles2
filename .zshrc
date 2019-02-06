@@ -35,19 +35,24 @@ setopt prompt_subst
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git*' formats "%F{yellow}%b%f %m%u%c"
+zstyle ':vcs_info:git*' actionformats "%F{yellow}%b%f %F{red}•%a%f  %m%u%c"
 
 zstyle ':vcs_info:*' unstagedstr '%F{yellow}!%f'
 zstyle ':vcs_info:*' stagedstr '%F{green}+%f'
 
-zstyle ':vcs_info:git*+set-message:*' hooks git-st git-untracked
-+vi-git-untracked(){
+zstyle ':vcs_info:git*+set-message:*' hooks clear-misc git-st git-untracked
++vi-clear-misc() {
+    hook_com[misc]=""
+}
+
++vi-git-untracked() {
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
         git status --porcelain | grep '??' &> /dev/null ; then
         hook_com[misc]+='%F{red}?%f'
     fi
 }
 
-function +vi-git-st() {
++vi-git-st() {
     local ahead behind ahead_fmt behind_fmt
     local -a gitstatus
 
