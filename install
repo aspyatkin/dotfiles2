@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 [ -e "$HOME/.gemrc" ] || [ -h "$HOME/.gemrc" ] && rm "$HOME/.gemrc"
 ln -s "$PWD/.gemrc" "$HOME/.gemrc"
@@ -17,3 +17,19 @@ ln -s "$PWD/.Xresources" "$HOME/.Xresources"
 
 [ -e "$HOME/.Xdefaults" ] || [ -h "$HOME/.Xdefaults" ] && rm "$HOME/.Xdefaults"
 ln -s "$PWD/.Xresources" "$HOME/.Xdefaults"
+
+case "$OSTYPE" in
+  darwin*)
+    SUBLIME_TEXT_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+  ;;
+  linux*)
+    SUBLIME_TEXT_DIR="$HOME/.config/sublime-text-3/Packages/User"
+  ;;
+  *)
+    SUBLIME_TEXT_DIR=""
+  ;;
+esac
+
+[ ! -z "$SUBLIME_TEXT_DIR" ] && [ -e "$SUBLIME_TEXT_DIR" ] || [ -h "$SUBLIME_TEXT_DIR" ] && rm "$SUBLIME_TEXT_DIR"
+ln -s "$PWD/sublime-text" "$SUBLIME_TEXT_DIR"
+
