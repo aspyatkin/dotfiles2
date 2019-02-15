@@ -5,7 +5,19 @@
 	],
 	"installed_packages":
 	[
+		"EditorConfig",
+		"GitGutter",
+		"MarkdownEditing",
 		"MarkdownPreview",
-		"Package Control"
+		"Package Control",
+		"PlatformSettings",
+		"SFTP",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-rubocop",
+		"TabNine",
+		"Theme - Cobalt2",
+		"TrailingSpaces",
+		"WordCount"
 	]
 }

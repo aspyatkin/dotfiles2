@@ -1,7 +1,48 @@
 {
-	"font_size": 10,
+	"auto_complete": false,
+	"bold_folder_labels": true,
+	"caret_extra_bottom": 2,
+	"caret_extra_top": 2,
+	"caret_extra_width": 3,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
+	"draw_white_space": "all",
+	"font_face": "PragmataPro Liga",
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"Markdown",
 		"Vintage"
-	]
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"linux":
+	{
+		"font_size": 13,
+		"font_options": [
+			"gray_antialias"
+		],
+		"theme_font_options": [
+			"gray_antialias"
+		]
+	},
+	"osx":
+	{
+		"font_size": 12
+	},
+	"rulers":
+	[
+		80,
+		120
+	],
+	"sidebar_font_small": false,
+	"sidebar_large": true,
+	"theme": "Cobalt2.sublime-theme",
+	"wide_caret": true
 }
