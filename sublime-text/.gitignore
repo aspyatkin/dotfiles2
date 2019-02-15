@@ -4,6 +4,7 @@ Package\ Control.ca-bundle
 Package\ Control.system-ca-bundle
 Package\ Control.user-ca-bundle
 Package\ Control.merged-ca-bundle
+oscrypto-ca-bundle.crt
 Package\ Control.cache/*
 Package\ Control.ca-certs/*
 SFTP.sublime-settings
