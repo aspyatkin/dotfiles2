@@ -30,6 +30,9 @@ case "$OSTYPE" in
   ;;
 esac
 
-[ ! -z "$SUBLIME_TEXT_DIR" ] && [ -e "$SUBLIME_TEXT_DIR" ] || [ -h "$SUBLIME_TEXT_DIR" ] && rm "$SUBLIME_TEXT_DIR"
-ln -s "$PWD/sublime-text" "$SUBLIME_TEXT_DIR"
+if [ ! -z "$SUBLIME_TEXT_DIR" ]
+then
+  [ -e "$SUBLIME_TEXT_DIR" ] || [ -h "$SUBLIME_TEXT_DIR" ] && rm "$SUBLIME_TEXT_DIR"
+  ln -s "$PWD/sublime-text" "$SUBLIME_TEXT_DIR"
+fi
 
