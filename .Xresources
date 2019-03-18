@@ -25,3 +25,10 @@ XTerm.vt100.color15:      #f1f1f0
 
 XTerm*saveLines: 99999
 XTerm*geometry: 100x30
+
+XTerm.vt100.scrollBar: true
+XTerm.vt100.rightScrollBar: true
+XTerm.vt100.scrollWidth: 10
+
+XTerm*cursorBlink: false
+XTerm*selectToClipboard: true
