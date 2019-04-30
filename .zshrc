@@ -94,6 +94,15 @@ function pwd_prompt () {
   echo '%B%F{cyan}%(4~|…/%3~|%~)%f%b '
 }
 
+function chpwd () {
+  if [ -d "$OLDPWD" ] && [ -r "$OLDPWD/.zshclean" ]; then
+    source "$OLDPWD/.zshclean"
+  fi
+  if [ -r "$PWD/.zshenv" ]; then
+    source "$PWD/.zshenv"
+  fi
+}
+
 PROMPT=$'$(ssh_prompt)$(user_host_prompt)$(pwd_prompt)${vcs_info_msg_0_}%E\n%B%(?.%F{green}.%F{red})⮞%f%b%E '
 
 # user-friendly command output
