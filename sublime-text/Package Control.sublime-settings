@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Better CoffeeScript",
 		"EditorConfig",
 		"GitGutter",
 		"MarkdownEditing",
