@@ -25,7 +25,8 @@ setopt share_history
 
 setopt auto_cd
 
-setopt correct_all
+unsetopt correct_all
+setopt correct
 setopt auto_list
 setopt auto_menu
 setopt always_to_end
@@ -144,6 +145,12 @@ if [ -x "$(command -v keychain)" ]; then
 fi
 
 export EDITOR=vim
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 alias ssh_with_pwd='ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no -F /dev/null'
 alias ssh_with_key='ssh -o IdentitiesOnly=yes -F /dev/null'
+
+case `uname` in
+    Darwin) hash -d icloud=~/Library/Mobile\ Documents/com~apple~CloudDocs;;
+esac
