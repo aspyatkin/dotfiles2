@@ -154,3 +154,5 @@ alias ssh_with_key='ssh -o IdentitiesOnly=yes -F /dev/null'
 case `uname` in
     Darwin) hash -d icloud=~/Library/Mobile\ Documents/com~apple~CloudDocs;;
 esac
+
+alias ...='cd ../../'
