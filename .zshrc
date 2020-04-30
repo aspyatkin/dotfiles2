@@ -141,7 +141,7 @@ if [ -x "$HOME/.acme.sh/acme.sh" ]; then
 fi
 
 if [ -x "$(command -v keychain)" ]; then
-    eval `keychain --eval --agents ssh id_rsa id_ed25519`
+    eval `keychain --nogui --eval --agents ssh id_rsa id_ed25519`
 fi
 
 export EDITOR=vim

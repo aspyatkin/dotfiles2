@@ -5,10 +5,10 @@
 	"caret_extra_top": 2,
 	"caret_extra_width": 3,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Theme - Cobalt2/cobalt2.tmTheme",
+	"color_scheme": "Packages/ayu/ayu-light.sublime-color-scheme",
 	"draw_white_space": "all",
 	"font_face": "PragmataPro Liga",
-	"font_size": 11,
+	"font_size": 10,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
@@ -57,6 +57,9 @@
 	],
 	"sidebar_font_small": false,
 	"sidebar_large": true,
-	"theme": "Cobalt2.sublime-theme",
-	"wide_caret": true
+	"theme": "ayu-light.sublime-theme",
+	"wide_caret": true,
+	"ui_native_titlebar":       true, // use native titlebars on macOs
+	"ui_separator":             true, // separators between panels
+	"ui_wide_scrollbars":       true, // wider scrollbars
 }

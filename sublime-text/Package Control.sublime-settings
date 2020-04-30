@@ -5,6 +5,8 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
+		"ayu",
 		"Babel",
 		"Better CoffeeScript",
 		"EditorConfig",
