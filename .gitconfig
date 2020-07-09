@@ -26,6 +26,7 @@
     pt = push --tags
     t = tag
 [merge]
+    ff = no
     tool = vimdiff
     conflictstyle = diff3
 [mergetool]

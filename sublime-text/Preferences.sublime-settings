@@ -58,8 +58,8 @@
 	"sidebar_font_small": false,
 	"sidebar_large": true,
 	"theme": "ayu-light.sublime-theme",
-	"wide_caret": true,
-	"ui_native_titlebar":       true, // use native titlebars on macOs
-	"ui_separator":             true, // separators between panels
-	"ui_wide_scrollbars":       true, // wider scrollbars
+	"ui_native_titlebar": true,
+	"ui_separator": true,
+	"ui_wide_scrollbars": true,
+	"wide_caret": true
 }
