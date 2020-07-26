@@ -156,3 +156,9 @@ case `uname` in
 esac
 
 alias ...='cd ../../'
+
+if [ -x "$(command -v vault)" ]; then
+    autoload -U +X bashcompinit && bashcompinit
+    complete -o nospace -C /usr/local/bin/vault vault
+fi
+
