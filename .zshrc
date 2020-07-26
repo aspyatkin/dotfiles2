@@ -159,6 +159,7 @@ alias ...='cd ../../'
 
 if [ -x "$(command -v vault)" ]; then
     autoload -U +X bashcompinit && bashcompinit
-    complete -o nospace -C /usr/local/bin/vault vault
+    VAULT_BIN=`which vault`
+    complete -o nospace -C $VAULT_BIN vault
 fi
 
