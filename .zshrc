@@ -96,11 +96,12 @@ function pwd_prompt () {
 }
 
 function chpwd () {
-  if [ -d "$OLDPWD" ] && [ -r "$OLDPWD/.zshclean" ]; then
-    source "$OLDPWD/.zshclean"
+  if [ -d "$OLDPWD" ] && [ -r "$OLDPWD/.zsh-leave" ]; then
+    source "$OLDPWD/.zsh-leave"
   fi
-  if [ -r "$PWD/.zshenv" ]; then
-    source "$PWD/.zshenv"
+
+  if [ -r "$PWD/.zsh-enter" ]; then
+    source "$PWD/.zsh-enter"
   fi
 }
 
@@ -156,6 +157,8 @@ case `uname` in
 esac
 
 alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
 
 if [ -x "$(command -v vault)" ]; then
     autoload -U +X bashcompinit && bashcompinit
