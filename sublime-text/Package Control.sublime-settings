@@ -7,7 +7,6 @@
 	[
 		"A File Icon",
 		"ayu",
-		"Babel",
 		"Better CoffeeScript",
 		"EditorConfig",
 		"GitGutter",
@@ -20,10 +19,10 @@
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-rubocop",
-		"TabNine",
 		"Terraform",
 		"Theme - Cobalt2",
 		"TrailingSpaces",
-		"WordCount"
-	]
+		"WordCount",
+		"Tabnine"
+	],
 }
