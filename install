@@ -20,8 +20,8 @@ ln -s "$PWD/.Xresources" "$HOME/.Xdefaults"
 
 case "$OSTYPE" in
   darwin*)
-    SUBLIME_TEXT_INSTALLED=`[ -d "$HOME/Library/Application Support/Sublime Text 3" ] && echo "yes" || echo "no"`
-    SUBLIME_TEXT_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+    SUBLIME_TEXT_INSTALLED=`[ -d "$HOME/Library/Application Support/Sublime Text" ] && echo "yes" || echo "no"`
+    SUBLIME_TEXT_DIR="$HOME/Library/Application Support/Sublime Text/Packages/User"
   ;;
   linux*)
     SUBLIME_TEXT_INSTALLED=`[ -d "$HOME/.config/sublime-text-3" ] && echo "yes" || echo "no"`
