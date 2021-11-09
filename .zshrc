@@ -80,13 +80,13 @@ function user_host_prompt () {
         local fqdn
 	fqdn=$(hostname -f)
         if [[ $UID -eq 0 ]]; then
-            echo "%B%F{yellow}⚠ %n@${fqdn}%f%b "
+            echo "%B%F{red}%n%f%F{white}@%f%F{red}${fqdn}%f%b "
         else
-            echo "%B%F{white}%n@${fqdn}%f%b "
+            echo "%B%F{white}%n%f%F{red}@%f%F{white}${fqdn}%f%b "
         fi
     else
         if [[ $UID -eq 0 ]]; then
-            echo '%B%F{yellow}⚠ %n%f '
+            echo '%B%F{red}%n%f '
         fi
     fi
 }
