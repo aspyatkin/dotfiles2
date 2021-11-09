@@ -71,7 +71,7 @@ precmd () {
 
 function ssh_prompt () {
     if [[ -n $SSH_CONNECTION ]]; then
-        echo '%F{blue}⟮𝐬𝐬𝐡⟯%f '
+        echo '%F{blue}⌈ssh⌋%f '
     fi
 }
 
