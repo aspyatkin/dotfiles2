@@ -58,10 +58,10 @@ zstyle ':vcs_info:git*+set-message:*' hooks clear-misc git-st git-untracked
     local -a gitstatus
 
     ahead=$(git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l | tr -d ' ')
-    (( $ahead )) && ahead_fmt=$(echo "${ahead}" | sed 's/1/¹/g; s/2/²/g; s/3/³/g; s/4/⁴/g; s/5/⁵/g; s/6/⁶/g; s/7/⁷/g; s/8/⁸/g; s/9/⁹/g; s/0/⁰/g;') && gitstatus+=( "%F{blue}⇡${ahead_fmt}%f " )
+    (( $ahead )) && ahead_fmt=$(echo "${ahead}" | sed 's/1/¹/g; s/2/²/g; s/3/³/g; s/4/⁴/g; s/5/⁵/g; s/6/⁶/g; s/7/⁷/g; s/8/⁸/g; s/9/⁹/g; s/0/⁰/g;') && gitstatus+=( "%F{magenta}↥${ahead_fmt}%f " )
 
     behind=$(git rev-list HEAD..${hook_com[branch]}@{upstream} 2>/dev/null | wc -l | tr -d ' ')
-    (( $behind )) && behind_fmt=$(echo "${behind}" | sed 's/1/₁/g; s/2/₂/g; s/3/₃/g; s/4/₄/g; s/5/₅/g; s/6/₆/g; s/7/₇/g; s/8/₈/g; s/9/₉/g; s/0/₀/g;') && gitstatus+=( "%F{blue}⇣${behind_fmt}%f " )
+    (( $behind )) && behind_fmt=$(echo "${behind}" | sed 's/1/₁/g; s/2/₂/g; s/3/₃/g; s/4/₄/g; s/5/₅/g; s/6/₆/g; s/7/₇/g; s/8/₈/g; s/9/₉/g; s/0/₀/g;') && gitstatus+=( "%F{blue}↧${behind_fmt}%f " )
 
     hook_com[misc]+="${gitstatus}"
 }
