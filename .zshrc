@@ -105,7 +105,7 @@ function chpwd () {
   fi
 }
 
-PROMPT=$'$(ssh_prompt)$(user_host_prompt)$(pwd_prompt)${vcs_info_msg_0_}%E\n%B%(?.%F{green}.%F{red})⮞%f%b%E '
+PROMPT=$'$(ssh_prompt)$(user_host_prompt)$(pwd_prompt)${vcs_info_msg_0_}%E\n%B%(?.%F{green}.%F{red})⟶%f%b%E '
 
 # user-friendly command output
 export CLICOLOR=1
