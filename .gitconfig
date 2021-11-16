@@ -33,3 +33,5 @@
     prompt = false
 [rebase]
     autostash = true
+[includeIf "gitdir:~/Projects/github.com/hey-car/"]
+    path = ~/Projects/github.com/hey-car/.gitconfig-work

@@ -166,3 +166,4 @@ if [ -x "$(command -v vault)" ]; then
     complete -o nospace -C $VAULT_BIN vault
 fi
 
+export GPG_TTY=$(tty)
